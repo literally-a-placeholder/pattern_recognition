@@ -4,7 +4,7 @@ import numpy as np
 
 
 def main():
-    train = FileLoader('train.csv')
+    train = FileLoader('datasets/train.csv')
     data = train.data
     test = train.test
 
@@ -25,3 +25,4 @@ class FileLoader:
 
 if __name__ == '__main__':
     main()
+
