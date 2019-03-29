@@ -16,3 +16,5 @@ Make sure to install new packages using the following commands in order to make 
 pip install <package> 
 pip freeze > requirements.txt
 ```
+Have fun!
+
