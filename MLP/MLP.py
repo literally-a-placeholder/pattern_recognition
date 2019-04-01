@@ -20,8 +20,8 @@ from torchvision import transforms
 import torch.nn as nn
 import matplotlib.pyplot as plt
 
-path_train = 'mnist_train.csv'
-path_test = 'mnist_test.csv'
+path_train = '../datasets/mnist_train.csv'
+path_test = '../datasets/mnist_test.csv'
 
 def readCsv(path):
     with open(path, 'rt') as csvfile:
