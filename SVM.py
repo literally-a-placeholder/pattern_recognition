@@ -16,8 +16,8 @@ def main():
 
 def parameter_tuning(train, n_folds):
     print('Started parameter tuning...')
-    Cs = [0.1, 1, 10, 100]
-    gammas = [0.001, 0.01, 0.1, 1]
+    Cs = [0.1, 1, 10]
+    gammas = [0.001, 0.01, 0.1]
     params = [
         {'kernel': ['linear'], 'C': Cs},
         {'kernel': ['rbf'], 'C': Cs, 'gamma': gammas},
