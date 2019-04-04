@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV
 def main():
     train = FileLoader('./datasets/mnist_train.csv')  # TODO replace with real files
     test = FileLoader('./datasets/mnist_test.csv') # TODO replace with real files
-    n_folds = 5
+    n_folds = 3
     classifier = parameter_tuning(train, n_folds=n_folds)
     validation_score = round(validate(classifier, test), 3)*100
     print_results(classifier, validation_score)
@@ -16,7 +16,7 @@ def main():
 
 def parameter_tuning(train, n_folds):
     print('Started parameter tuning...')
-    Cs = [0.1, 1, 10, 100, 1000]
+    Cs = [0.1, 1, 10, 100]
     gammas = [0.001, 0.01, 0.1, 1]
     params = [
         {'kernel': ['linear'], 'C': Cs},
