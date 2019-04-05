@@ -33,13 +33,13 @@ from .PR_CNN import PR_CNN
 
 
 ### 5. Import and prepare MNIST dataset
-Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/datasets/ folder. Also import the mnist_test folder from this repo. it contains less images and facilitates testing during development. 
+Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/datasets/ folder. 
 
 
 ### 6. Run CNN
 Run the CNN using the following command:
 ```
-python template/RunMe.py --output-folder log --dataset-folder mnist --lr 0.1 --ignoregit --no-cuda
+python template/RunMe.py --output-folder log --dataset-folder datasets/mnist --lr 0.1 --ignoregit --no-cuda
 ```
 Results in errors? Does it work for you ?
 
