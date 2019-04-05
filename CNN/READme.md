@@ -23,13 +23,14 @@ Download an MNIST dataset and perform the sample CNN on it to check if everythin
 ```
 python util/data/get_a_dataset.py --dataset mnist --output-folder toy_dataset
 python template/RunMe.py --output-folder log --dataset-folder toy_dataset/MNIST --lr 0.1 --ignoregit --no-cuda
-
+```
 
 ### 4. Import Custom Model
 Copy paste our PR_CNN.py file to the ~/DeepDiva/models folder. Open the __init__.py file in the models folder and add the following line below the other imports: 
 ```
 from .PR_CNN import PR_CNN
 ```
+
 
 ### 5. Import and prepare MNIST dataset
 Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/datasets/ folder. Also import the mnist_test folder from this repo. it contains less images and facilitates testing during development. 
