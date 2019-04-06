@@ -1,0 +1,17 @@
+The MLP achieves (more or less) the same performance on the permuted MNIST dataset, because it 
+doesn't use the order of the inputs. In a linear layer the function f(x)=Wx+b can be translated 
+to the permuted version by permuting the rows of W and b. The MLP simply learns the permuted 
+function.
+
+Epoch 1, Training loss: 3.4586, Validation loss: 515.9864, Validation accuracy: 80.0%
+Epoch 2, Training loss: 0.1294, Validation loss: 126.3241, Validation accuracy: 90.5%
+Epoch 3, Training loss: 0.0677, Validation loss: 64.9242, Validation accuracy: 95.3%
+Epoch 4, Training loss: 0.0426, Validation loss: 73.3183, Validation accuracy: 95.1%
+Epoch 5, Training loss: 0.0281, Validation loss: 55.6589, Validation accuracy: 96.3%
+Epoch 6, Training loss: 0.0177, Validation loss: 54.7156, Validation accuracy: 96.4%
+Epoch 7, Training loss: 0.0115, Validation loss: 50.5181, Validation accuracy: 96.8%
+Epoch 8, Training loss: 0.0058, Validation loss: 50.3039, Validation accuracy: 97.1%
+Epoch 9, Training loss: 0.0021, Validation loss: 50.0576, Validation accuracy: 97.1%
+Epoch 10, Training loss: 0.0011, Validation loss: 49.5361, Validation accuracy: 97.3%
+
+Test loss: 22.2039, accuracy: 97.3%
