@@ -1,5 +1,5 @@
 # number of neurons in the hidden layer
-hidden_dim = 100
+hidden_dim = 2000
 
 # learning rate
 learning_rate = 0.005
@@ -34,35 +34,30 @@ for i in range(10):
         test_paths = test_paths + [path+'/test/'+str(i)+'/'+tepath]
 print(train_paths[0:5])
 
+def loadimage(imagepath):
+    image = Image.open(imagepath).convert('L')
+    npimage = np.array(image).reshape(28*28)
+    for i in range(28*28):
+        npimage[i] = 255 - npimage[i]
+    return npimage, imagepath[-5]
+
 n = len(train_paths)
 train_images = np.zeros((n, 28*28), dtype=np.int)
 train_labels = np.zeros(n, dtype=np.int)
 for i in range(n):
-    ip = train_paths[i]
-    image = Image.open(ip).convert('L')
-    npimage = np.array(image).reshape(28*28)
-    train_images[i,:] = npimage
-    train_labels[i] = ip[-5]
+    train_images[i], train_labels[i] = loadimage(train_paths[i])
     
 n = len(val_paths)
 val_images = np.zeros((n, 28*28), dtype=np.int)
 val_labels = np.zeros(n, dtype=np.int)
 for i in range(n):
-    ip = val_paths[i]
-    image = Image.open(ip).convert('L')
-    npimage = np.array(image).reshape(28*28)
-    val_images[i,:] = npimage
-    val_labels[i] = ip[-5]
+    val_images[i], val_labels[i] = loadimage(val_paths[i])
     
 n = len(test_paths)
 test_images = np.zeros((n, 28*28), dtype=np.int)
 test_labels = np.zeros(n, dtype=np.int)
 for i in range(n):
-    ip = test_paths[i]
-    image = Image.open(ip).convert('L')
-    npimage = np.array(image).reshape(28*28)
-    test_images[i,:] = npimage
-    test_labels[i] = ip[-5]
+    test_images[i], test_labels[i] = loadimage(test_paths[i])
     
 print(train_images.shape, train_labels.shape)
 print(val_images.shape, val_labels.shape)
