@@ -55,7 +55,7 @@ class PR_CNN(nn.Module):
         # First layer
         self.conv1 = nn.Sequential(
             # PR_FILL_HERE: Here you have to put the input channels, output channels ands the kernel size
-            nn.Conv2d(in_channels=3, out_channels=12, kernel_size=3, stride=3),
+            nn.Conv2d(in_channels=3, out_channels=24, kernel_size=5, stride=3),
             nn.LeakyReLU()
         )
 
@@ -63,7 +63,7 @@ class PR_CNN(nn.Module):
         self.fc = nn.Sequential(
             Flatten(),
             # PR_FILL_HERE: Here you have to put the output size of the linear layer. DO NOT change 1536!
-            nn.Linear(1536, 9730)
+            nn.Linear(1536, 10)
         )
 
     def forward(self, x):
