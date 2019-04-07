@@ -20,5 +20,13 @@ Make sure to install new packages using the following commands in order to make 
 pip install <package> 
 pip freeze > requirements.txt
 ```
+
+### Visualize CNN Results
+Results for the CNN Task can be found in ~/CNN/results. 
+It also contains the tensorboard files that can be viewed using the following command: 
+```
+cd results/pr_cnn/mnist/model_name\=PR_CNN/
+tensorboard --logdir ./ --port 6006
+```
 Have fun!
 
