@@ -38,7 +38,7 @@ Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/ 
 ### 6. Run CNN
 Run the CNN using the following command:
 ```
- python template/RunMe.py --output-folder log --dataset-folder mnist --lr 0.1 --model-name PR_CNN --ignoregit --no-cuda
+ python template/RunMe.py  --experiment-name pr_cnn --output-folder results --dataset-folder mnist --lr 0.1 --model-name PR_CNN --ignoregit --no-cuda
 ```
 
 ### 7. Frequent Errors and Fixes
@@ -57,7 +57,14 @@ This error could occur when running the command from step 6. Repeat the environm
 ### 8. Visualize Results
 Install Tensorflow (includes TensorBoard) or only TensorBoard. Then run the visualization from within the results directory: 
 ```
-cd log/<name of experiment>/mnist/model_name\=PR_CNN/lr\=0.1/no_cuda\=True/<date>
+cd results/pr_cnn/mnist/model_name\=PR_CNN/
 tensorboard --logdir ./ --port 6006
 ```
+
+### 9. Optimize Params
+Copy and paste the params.json file to the ~DeepDiva/ root directory. Then run the following command to start the CNN for all possible params. 
+```
+python template/RunMe.py --experiment-name pr_cnn --output-folder results --dataset-folder mnist --model-name PR_CNN --hyper-param-optim ./params.json --ignoregit --no-cuda
+```
+
 
