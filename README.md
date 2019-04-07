@@ -21,7 +21,7 @@ pip install <package>
 pip freeze > requirements.txt
 ```
 
-### Visualize CNN Results
+## Visualize CNN Results
 Results for the CNN Task can be found in ~/CNN/results. 
 It also contains the tensorboard files that can be viewed using the following command: 
 ```
