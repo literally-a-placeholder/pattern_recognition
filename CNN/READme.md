@@ -51,3 +51,5 @@ In case you run into ModulesNotFound Errors, install the missing modules using a
 ```
 pip install <module_name>
 ```
+#### 7.3 TypeError: can't convert np.ndarray of type numpy.object_.
+This error could occur when running the command from step 6. Repeat the environment setup in step 2 and retry running the command from step 6. 
