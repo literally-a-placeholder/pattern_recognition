@@ -67,4 +67,10 @@ Copy and paste the params.json file to the ~DeepDiva/ root directory. Then run t
 python template/RunMe.py --experiment-name pr_cnn --output-folder results --dataset-folder mnist --model-name PR_CNN --hyper-param-optim ./params.json --ignoregit --no-cuda
 ```
 
+The best params in our experiment are: 100 epochs, learning rate: 0.05 with 97.88% accuracy on the validation set and 97.88% accuracy on the test set. 
 
+### 10. Random Initializations
+Rerun the CNN with the best params gathered in step 9 using the following command: 
+```
+python template/RunMe.py --experiment-name pr_cnn --output-folder results --dataset-folder mnist --model-name PR_CNN --hyper-param-optim ./params.json --ignoregit --no-cuda --multi-run 10
+```
