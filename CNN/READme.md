@@ -31,19 +31,25 @@ Copy paste our PR_CNN.py file to the ~/DeepDiva/models folder. Open the __init__
 from .PR_CNN import PR_CNN
 ```
 
-
 ### 5. Import and prepare MNIST dataset
-Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/datasets/ folder. 
+Copy & paste the extracted "mnist-png-format.zip" from ilias to the ~/DeepDiva/ folder. Make sure that the mnist/train subfolder does not contain a file/link called "val"
 
 
 ### 6. Run CNN
 Run the CNN using the following command:
 ```
-python template/RunMe.py --output-folder log --dataset-folder datasets/mnist --lr 0.1 --ignoregit --no-cuda
+ python template/RunMe.py --output-folder log --dataset-folder mnist --lr 0.1 --model-name PR_CNN --ignoregit --no-cuda
 ```
-Results in errors? Does it work for you ?
 
+### 7. Frequent Errors and Fixes
+
+#### 7.1 SyntaxError async=True
+In case you run into SyntaxErrors with .cuda(async=True), then simply replace all occurrences of .cuda(async=True) with .cuda()
+
+#### 7.2 ModulesNotFound
 In case you run into ModulesNotFound Errors, install the missing modules using and retry the command above: 
 ```
 pip install <module_name>
 ```
+#### 7.3 TypeError: can't convert np.ndarray of type numpy.object_.
+This error could occur when running the command from step 6. Repeat the environment setup in step 2 and retry running the command from step 6. 
