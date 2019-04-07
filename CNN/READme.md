@@ -72,5 +72,5 @@ The best params in our experiment are: 100 epochs, learning rate: 0.05 with 97.8
 ### 10. Random Initializations
 Rerun the CNN with the best params gathered in step 9 using the following command: 
 ```
-python template/RunMe.py --experiment-name pr_cnn --output-folder results --dataset-folder mnist --model-name PR_CNN --hyper-param-optim ./params.json --ignoregit --no-cuda --multi-run 10
+python template/RunMe.py --experiment-name pr_cnn --output-folder results --dataset-folder mnist --model-name PR_CNN --ignoregit --no-cuda --multi-run 10 --lr 0.05 --epochs 100
 ```
