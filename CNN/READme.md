@@ -53,3 +53,11 @@ pip install <module_name>
 ```
 #### 7.3 TypeError: can't convert np.ndarray of type numpy.object_.
 This error could occur when running the command from step 6. Repeat the environment setup in step 2 and retry running the command from step 6. 
+
+### 8. Visualize Results
+Install Tensorflow (includes TensorBoard) or only TensorBoard. Then run the visualization from within the results directory: 
+```
+cd log/<name of experiment>/mnist/model_name\=PR_CNN/lr\=0.1/no_cuda\=True/<date>
+tensorboard --logdir ./ --port 6006
+```
+
