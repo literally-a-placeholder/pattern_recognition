@@ -1,0 +1,27 @@
+Unfortunately, the SVM did not finish in time, hence we can just deliver the results from our tests below. We let it run until Wednesday, in case the results pop up eventually. In that case, we would upload them to github. 
+
+
+Loading ./datasets/mnist_train_dev.csv... # 10'000 digits
+Loading ./datasets/mnist_test_dev.csv... # 500 digits
+Started parameter tuning...
+Fitting to training set...
+Validating classifier on test set...
+Cross Validation Results:
+	Average accuracy during cross-validation:  91.0 %
+	Grid Scores on Training:
+		0.910 (+/-0.020) for {'C': 0.1, 'kernel': 'linear'}
+		0.910 (+/-0.020) for {'C': 1, 'kernel': 'linear'}
+		0.910 (+/-0.020) for {'C': 10, 'kernel': 'linear'}
+		0.113 (+/-0.000) for {'C': 10, 'gamma': 0.001, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 10, 'gamma': 0.01, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 1, 'gamma': 0.001, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 1, 'gamma': 0.01, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 1, 'gamma': 0.1, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 0.1, 'gamma': 0.001, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 0.1, 'gamma': 0.01, 'kernel': 'rbf'}
+		0.113 (+/-0.000) for {'C': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}
+	Best Params: {'C': 0.1, 'kernel': 'linear'}
+
+Total accuracy on test set:  91.60000000000001 %
+

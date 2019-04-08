@@ -6,8 +6,8 @@ from sklearn.model_selection import GridSearchCV
 
 
 def main():
-    train = FileLoader('./datasets/mnist_train.csv')  # TODO replace with real files
-    test = FileLoader('./datasets/mnist_test.csv') # TODO replace with real files
+    train = FileLoader('./datasets/mnist_train_dev.csv')  # TODO replace with real files
+    test = FileLoader('./datasets/mnist_test_dev.csv') # TODO replace with real files
     n_folds = 3
     classifier = parameter_tuning(train, n_folds=n_folds)
     validation_score = round(validate(classifier, test), 3)*100
@@ -15,12 +15,9 @@ def main():
 
 
 def parameter_tuning(train, n_folds):
-    print('Started parameter tuning...')
-    Cs = [0.1, 1, 10]
-    gammas = [0.001, 0.01, 0.1]
     params = [
-        {'kernel': ['linear'], 'C': Cs},
-        {'kernel': ['rbf'], 'C': Cs, 'gamma': gammas},
+        {'C': [0.1, 1, 10], 'kernel': ['linear'], },
+        {'C': [10, 1, 0.1], 'gamma': [0.001, 0.01, 0.1], 'kernel': ['rbf'], },
     ]
     classifier = GridSearchCV(estimator=svm.SVC(), param_grid=params, n_jobs=-1, cv=n_folds)
 
@@ -37,13 +34,16 @@ def validate(classifier, test):
 def print_results(classifier, validation_score):
     print('Cross Validation Results:')
     print('\tAverage accuracy during cross-validation: ', round(classifier.best_score_, 3)*100, '%')
-    print('\tBest Kernel:', classifier.best_estimator_.kernel)
-    print('\tBest C:', classifier.best_estimator_.C)
-    if classifier.best_estimator_.kernel == 'rbf':
-        print('\tBest Gamma:', classifier.best_estimator_.gamma)
+
+    print('\tGrid Scores on Training:')
+    means = classifier.cv_results_['mean_test_score']
+    stds = classifier.cv_results_['std_test_score']
+    for mean, std, params in zip(means, stds, classifier.cv_results_['params']):
+        print("\t\t%0.3f (+/-%0.03f) for %r"
+              % (mean, std * 2, params))
+    print('\tBest Params:', classifier.best_params_)
 
     print('\nTotal accuracy on test set: ', validation_score, '%')
-
 
 class FileLoader:
     def __init__(self, filename):
