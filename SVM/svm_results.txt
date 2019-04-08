@@ -1,4 +1,4 @@
-Unfortunately, the SVM did not finish in time, hence we can just deliver the results from our tests below. We let it run until Wednesday, in case the results pop up eventually. In that case, we would upload them to github. 
+Unfortunately, the SVM did not finish in time, hence we can just deliver the results from our tests below. We let it run until Wednesday, in case the results pop up eventually. In that case, we would upload them to github. You can check how far we got in the stdout.txt file. 
 
 
 Loading ./datasets/mnist_train_dev.csv... # 10'000 digits
