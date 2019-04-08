@@ -1,3 +1,5 @@
+### Results interpretation
+
 The permuted dataset shows slightly less accuracy of around 95-96% compared to the normal mnist of around 97-98%.  
 
 Furthermore, we can see that it takes more epochs until the accuracy stabilizes. For the normal MNIST it starts stabilizing around 25 epochs with a few dips in later epochs, with consistent results past 70 epochs. 
