@@ -2,6 +2,14 @@
 Group name: literally_a_placeholder
 Members: Tim Ogi, Mario Moser, Michael Baur, Dominik Meise, Timo Spring
 
+## Results
+SVM Results: [results.txt](https://github.com/literally-a-placeholder/pattern_recognition/blob/master/SVM/svm_results.txt), [stdout.txt](https://github.com/literally-a-placeholder/pattern_recognition/blob/master/SVM/stdout.txt)
+
+MLP Results: [MLP](https://github.com/literally-a-placeholder/pattern_recognition/tree/master/MLP)
+
+CNN Results: [CNN](https://github.com/literally-a-placeholder/pattern_recognition/tree/master/CNN/results)
+
+
 ## Run
 Clone the project and run the following command from the root folder to install all dependencies. 
 
